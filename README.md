@@ -9,9 +9,11 @@ A temperature controlled fan activator.
 
 ## 🔹 Rev 1 Schematic
 
-## 🔹 Rev 1
+![Rev 1](<Schematics/Rev 1.png>)
 
-- Initial release.
+## 🔹 V1.0.0 Firmware For Rev 1 Schematic
+
+- Initial draft.
 
 ##
 
