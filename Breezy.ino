@@ -28,6 +28,7 @@ const uint8_t FW_VERSION_PATCH = 0;
 /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 const uint8_t PIN_INPUT_THERMISTOR_SENSE = A0;
 const uint8_t PIN_OUTPUT_RELAY_ENABLE = 6;
+const uint8_t PIN_OUTPUT_ACTIVITY = 7;
 /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 const float TEMP_ZERO_KELVIN = 273.15;
 const uint8_t THERMISTOR_NOMINAL_TEMP = 25;            // Almost always 25 degrees C; check datasheet.
@@ -44,11 +45,14 @@ const float RELAY_OFF_TEMP = 20.5;  // AC off; should be less than normal room t
 void setup(void) {
   pinMode(PIN_INPUT_THERMISTOR_SENSE, INPUT);
   pinMode(PIN_OUTPUT_RELAY_ENABLE, OUTPUT);
+  pinMode(PIN_OUTPUT_ACTIVITY, OUTPUT);
 }
 /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 // Main program loop.
 /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 void loop(void) {
+  digitalWrite(PIN_OUTPUT_ACTIVITY, true);
+
   float currentTemp = handleThermistor();
 
   if (currentTemp <= RELAY_ON_TEMP) {
@@ -57,7 +61,9 @@ void loop(void) {
     digitalWrite(PIN_OUTPUT_RELAY_ENABLE, false);
   }
 
-  delayInternal(1000, waitHandler);
+  delayInternal(750, waitHandler);
+  digitalWrite(PIN_OUTPUT_ACTIVITY, false);
+  delayInternal(250, waitHandler);
 }
 /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 // Check on interrupts or other states while performing a delay.
