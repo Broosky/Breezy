@@ -2714,7 +2714,7 @@
 		)
 		(uuid "7e1a291a-cfd4-42bc-9f30-fe81a5e84e4f")
 	)
-	(text "70mA Ice:drive = 7mA Ibe:saturation\n5V - 0.7V / 0.007A = 614R\nVce:saturation ~= 0.3V"
+	(text "80mA Ice:drive = 8mA Ibe:saturation\n5V - 0.7V / 0.008A = 538R\nVce:saturation ~= 0.3V"
 		(exclude_from_sim no)
 		(at 179.324 106.426 0)
 		(effects
@@ -2763,6 +2763,12 @@
 		(uuid "2a222d0e-d463-4688-ab39-09cef55016a9")
 	)
 	(junction
+		(at 158.75 92.71)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "2d95d527-8e5b-495d-ad87-708a9df1363c")
+	)
+	(junction
 		(at 76.2 100.33)
 		(diameter 0)
 		(color 0 0 0 0)
@@ -2793,16 +2799,16 @@
 		(uuid "63200df7-75b6-4c16-9685-a2fa233bf645")
 	)
 	(junction
-		(at 158.75 88.9)
-		(diameter 0)
-		(color 0 0 0 0)
-		(uuid "abac95b8-a65e-4e72-bdea-f4f7f7a3ebd1")
-	)
-	(junction
 		(at 119.38 130.81)
 		(diameter 0)
 		(color 0 0 0 0)
 		(uuid "b0500d40-61fb-4c41-b4a7-dd9d4f20aacd")
+	)
+	(junction
+		(at 143.51 71.12)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "b165f358-7d70-4ba0-a1cd-1bbfe68c3cb2")
 	)
 	(junction
 		(at 76.2 71.12)
@@ -2895,7 +2901,7 @@
 		(uuid "a3721e7a-e166-43aa-93b3-8a499c7030af")
 	)
 	(no_connect
-		(at 177.8 72.39)
+		(at 177.8 74.93)
 		(uuid "b4cdb149-543b-4520-ac6b-214c4ed5f552")
 	)
 	(no_connect
@@ -2962,7 +2968,7 @@
 	)
 	(wire
 		(pts
-			(xy 182.88 69.85) (xy 182.88 72.39)
+			(xy 182.88 69.85) (xy 182.88 74.93)
 		)
 		(stroke
 			(width 0)
@@ -3002,7 +3008,7 @@
 	)
 	(wire
 		(pts
-			(xy 170.18 71.12) (xy 170.18 72.39)
+			(xy 170.18 71.12) (xy 170.18 74.93)
 		)
 		(stroke
 			(width 0)
@@ -3062,7 +3068,7 @@
 	)
 	(wire
 		(pts
-			(xy 170.18 88.9) (xy 170.18 87.63)
+			(xy 170.18 92.71) (xy 170.18 90.17)
 		)
 		(stroke
 			(width 0)
@@ -3072,7 +3078,7 @@
 	)
 	(wire
 		(pts
-			(xy 158.75 88.9) (xy 170.18 88.9)
+			(xy 158.75 92.71) (xy 170.18 92.71)
 		)
 		(stroke
 			(width 0)
@@ -3102,17 +3108,17 @@
 	)
 	(wire
 		(pts
-			(xy 158.75 88.9) (xy 158.75 95.25)
+			(xy 143.51 81.28) (xy 143.51 82.55)
 		)
 		(stroke
 			(width 0)
 			(type default)
 		)
-		(uuid "3fb29d3e-8e0b-4560-8e00-cbbae4d2bbd7")
+		(uuid "3fca861a-2c3e-45fa-ae8e-7b6d892396a5")
 	)
 	(wire
 		(pts
-			(xy 116.84 71.12) (xy 158.75 71.12)
+			(xy 116.84 71.12) (xy 143.51 71.12)
 		)
 		(stroke
 			(width 0)
@@ -3162,7 +3168,17 @@
 	)
 	(wire
 		(pts
-			(xy 158.75 71.12) (xy 158.75 76.2)
+			(xy 143.51 90.17) (xy 143.51 92.71)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "63468634-4514-405d-9d19-60cc822ca86c")
+	)
+	(wire
+		(pts
+			(xy 158.75 71.12) (xy 158.75 78.74)
 		)
 		(stroke
 			(width 0)
@@ -3189,6 +3205,16 @@
 			(type default)
 		)
 		(uuid "74b55582-5178-4399-8d55-715af6f41267")
+	)
+	(wire
+		(pts
+			(xy 158.75 92.71) (xy 158.75 95.25)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "88ee7161-11e1-450c-a48d-fa3961c1f2d6")
 	)
 	(wire
 		(pts
@@ -3222,16 +3248,6 @@
 	)
 	(wire
 		(pts
-			(xy 158.75 83.82) (xy 158.75 88.9)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "92b6b18e-8e87-4b83-ba5f-671081905d31")
-	)
-	(wire
-		(pts
 			(xy 121.92 130.81) (xy 143.51 130.81)
 		)
 		(stroke
@@ -3239,6 +3255,16 @@
 			(type default)
 		)
 		(uuid "943a615c-c277-4801-a1cc-a14444ed9bdd")
+	)
+	(wire
+		(pts
+			(xy 143.51 71.12) (xy 158.75 71.12)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "9a5a4dff-98fb-4cbc-ad5a-7506ff93a37f")
 	)
 	(wire
 		(pts
@@ -3302,6 +3328,26 @@
 	)
 	(wire
 		(pts
+			(xy 158.75 92.71) (xy 143.51 92.71)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "c12a6d02-1fb9-429a-8499-1c14799249e6")
+	)
+	(wire
+		(pts
+			(xy 143.51 71.12) (xy 143.51 76.2)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "c46e6f1a-9eda-46bd-8312-fc81dd6b97e9")
+	)
+	(wire
+		(pts
 			(xy 68.58 130.81) (xy 76.2 130.81)
 		)
 		(stroke
@@ -3332,7 +3378,7 @@
 	)
 	(wire
 		(pts
-			(xy 180.34 87.63) (xy 180.34 92.71)
+			(xy 180.34 90.17) (xy 180.34 92.71)
 		)
 		(stroke
 			(width 0)
@@ -3469,6 +3515,16 @@
 			(type default)
 		)
 		(uuid "fca6ef3c-246d-4984-b249-21ae9877e8c0")
+	)
+	(wire
+		(pts
+			(xy 158.75 86.36) (xy 158.75 92.71)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "ff54efb0-9573-40d0-a22a-c9435e9791e4")
 	)
 	(symbol
 		(lib_id "Device:LED")
@@ -3620,7 +3676,7 @@
 	)
 	(symbol
 		(lib_id "Diode:1N4148")
-		(at 158.75 80.01 270)
+		(at 158.75 82.55 270)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
@@ -3628,7 +3684,7 @@
 		(dnp no)
 		(uuid "3b6f2dba-9a00-4a85-ae13-b7ee43ca9849")
 		(property "Reference" "D3"
-			(at 148.844 78.74 90)
+			(at 155.194 76.962 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -3637,7 +3693,7 @@
 			)
 		)
 		(property "Value" "1N4148"
-			(at 148.844 81.28 90)
+			(at 150.368 79.502 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -3646,7 +3702,7 @@
 			)
 		)
 		(property "Footprint" "Diode_THT:D_DO-35_SOD27_P7.62mm_Horizontal"
-			(at 158.75 80.01 0)
+			(at 158.75 82.55 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -3655,7 +3711,7 @@
 			)
 		)
 		(property "Datasheet" "https://assets.nexperia.com/documents/data-sheet/1N4148_1N4448.pdf"
-			(at 158.75 80.01 0)
+			(at 158.75 82.55 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -3664,7 +3720,7 @@
 			)
 		)
 		(property "Description" "100V 0.15A standard switching diode, DO-35"
-			(at 158.75 80.01 0)
+			(at 158.75 82.55 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -3673,7 +3729,7 @@
 			)
 		)
 		(property "Sim.Device" "D"
-			(at 158.75 80.01 0)
+			(at 158.75 82.55 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -3682,7 +3738,7 @@
 			)
 		)
 		(property "Sim.Pins" "1=K 2=A"
-			(at 158.75 80.01 0)
+			(at 158.75 82.55 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -3862,7 +3918,7 @@
 				)
 			)
 		)
-		(property "Value" "680R"
+		(property "Value" "560R"
 			(at 145.796 97.282 90)
 			(effects
 				(font
@@ -3976,6 +4032,84 @@
 			(project "Breezy"
 				(path "/6ed4fe82-5cdd-4880-91fc-e7b8082b4415"
 					(reference "R4")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Device:LED")
+		(at 143.51 86.36 90)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "8497fc5c-f0d0-4949-b964-69316ab72b8d")
+		(property "Reference" "D4"
+			(at 144.78 83.566 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+			)
+		)
+		(property "Value" "Activated LED"
+			(at 140.462 80.01 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+			)
+		)
+		(property "Footprint" ""
+			(at 143.51 86.36 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "~"
+			(at 143.51 86.36 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "Light emitting diode"
+			(at 143.51 86.36 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Sim.Pins" "1=K 2=A"
+			(at 143.51 86.36 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "542973b7-e30e-4f13-9142-e27a307175b1")
+		)
+		(pin "2"
+			(uuid "3a260960-b61c-4a2a-9ec6-09162b1c09d1")
+		)
+		(instances
+			(project "Breezy"
+				(path "/6ed4fe82-5cdd-4880-91fc-e7b8082b4415"
+					(reference "D4")
 					(unit 1)
 				)
 			)
@@ -4279,7 +4413,7 @@
 		(dnp no)
 		(uuid "b1359acc-d3d1-44ff-9d45-64772ef0cb80")
 		(property "Reference" "A1"
-			(at 130.556 72.898 0)
+			(at 102.616 123.19 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -4288,7 +4422,7 @@
 			)
 		)
 		(property "Value" "Arduino Nano V3"
-			(at 144.272 75.184 0)
+			(at 116.332 125.476 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -4560,6 +4694,75 @@
 		)
 	)
 	(symbol
+		(lib_id "Device:R_Small_US")
+		(at 143.51 78.74 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "d69020f7-4dba-470f-9ce0-2ccb5f805a9f")
+		(property "Reference" "R6"
+			(at 144.272 74.168 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Value" "470R"
+			(at 144.018 76.2 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Footprint" ""
+			(at 143.51 78.74 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "~"
+			(at 143.51 78.74 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "Resistor, small US symbol"
+			(at 143.51 78.74 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "2"
+			(uuid "ce6cbc5f-1bf5-45a0-b0ff-28886fd84f6e")
+		)
+		(pin "1"
+			(uuid "93cbc33d-f38f-4bec-9b49-55720765f311")
+		)
+		(instances
+			(project "Breezy"
+				(path "/6ed4fe82-5cdd-4880-91fc-e7b8082b4415"
+					(reference "R6")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
 		(lib_id "power:VCC")
 		(at 124.46 64.77 0)
 		(unit 1)
@@ -4627,7 +4830,7 @@
 	)
 	(symbol
 		(lib_id "Relay:Relay_SPDT")
-		(at 175.26 80.01 0)
+		(at 175.26 82.55 0)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
@@ -4635,15 +4838,6 @@
 		(dnp no)
 		(uuid "f4193710-d3fa-40db-a09a-b6f1fe683227")
 		(property "Reference" "K1"
-			(at 161.29 74.422 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-			)
-		)
-		(property "Value" "5V"
 			(at 161.29 76.962 0)
 			(effects
 				(font
@@ -4652,8 +4846,17 @@
 				(justify left)
 			)
 		)
+		(property "Value" "5V"
+			(at 161.29 79.502 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
 		(property "Footprint" ""
-			(at 186.69 81.28 0)
+			(at 186.69 83.82 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -4663,7 +4866,7 @@
 			)
 		)
 		(property "Datasheet" "~"
-			(at 175.26 80.01 0)
+			(at 175.26 82.55 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -4672,7 +4875,7 @@
 			)
 		)
 		(property "Description" "Relay SPDT, monostable, EN50005"
-			(at 175.26 80.01 0)
+			(at 175.26 82.55 0)
 			(effects
 				(font
 					(size 1.27 1.27)
