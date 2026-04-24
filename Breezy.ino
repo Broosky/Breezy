@@ -10,7 +10,7 @@
 // "as is", without warranty of any kind. The author assumes no responsibility for any damages or issues resulting from    //
 // its use.                                                                                                                //
 /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-// Date: Tuesday, April 20th, 2026
+// Date: Monday, April 20th, 2026
 // Description: A temperature controlled fan activator.
 /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 // Fold all: Ctrl + K + 0

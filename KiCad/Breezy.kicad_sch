@@ -2664,6 +2664,16 @@
 		)
 		(uuid "065642d4-f63b-4e07-b9a2-e59965df37e6")
 	)
+	(text "Red"
+		(exclude_from_sim no)
+		(at 147.066 86.614 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+		)
+		(uuid "077c1ffc-093e-44d6-919f-751618444b47")
+	)
 	(text "Neutral"
 		(exclude_from_sim no)
 		(at 199.644 94.234 0)
