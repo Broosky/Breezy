@@ -1,6 +1,11 @@
 # 💡 Breezy
 
-A temperature-triggered fan controller that activates one or more box fans when the AC runs. Designed to improve airflow through a long corridor without manual intervention. Features configurable automatic modes for different behaviors, along with a manual override that forces the fans on and bypasses automatic control. Works with standard, non-smart thermostats by using a thermistor to detect cool vent air when the AC is active. Originally built for a family member, with the added goal of introducing them to embedded development.
+A temperature-triggered fan controller that activates one or more box fans when the AC runs. Designed to improve airflow through a long corridor without manual 
+intervention. Features configurable automatic modes for different behaviors, along with a manual override that forces the fans on and bypasses automatic 
+control. 
+
+Works with standard, non-smart thermostats by using a thermistor to detect cool vent air when the AC is active. Originally built for a family member, with 
+the added goal of introducing them to embedded development.
 
 > If you found this project useful, interesting, or worth keeping an eye on, consider giving it a ⭐️.
 > It helps others discover the project and motivates me to keep building and sharing more.
