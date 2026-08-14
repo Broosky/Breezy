@@ -334,11 +334,11 @@ void handleAutomaticBasicMode(void) {
   delayInternalMilliseconds(usRemainingDurationMs, interruptHandler);
 }
 /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-void pulse(uint8_t ubPin, uint8_t ubTimes, uint16_t usDelayMs, uint16_t usPwmdelayUs, uint16_t* const p_usRemainingDurationMs) {
+void pulse(uint8_t ubPin, uint8_t ubTimes, uint16_t usDelayMs, uint16_t usPwmDelayUs, uint16_t* const p_usRemainingDurationMs) {
   unsigned long ulStartMs = millis(), ulElapsed;
   ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
   for (uint8_t ubI = 0; ubI < ubTimes; ubI++) {
-    pulsePin(ubPin, usPwmdelayUs);
+    pulsePin(ubPin, usPwmDelayUs);
     if (ubTimes > 1 && ubI + 1 < ubTimes) {
       delayInternalMilliseconds(usDelayMs, NULL);
     }
@@ -355,16 +355,16 @@ void pulse(uint8_t ubPin, uint8_t ubTimes, uint16_t usDelayMs, uint16_t usPwmdel
   }
 }
 /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-void pulsePin(uint8_t ubPin, uint16_t usPwmdelayUs) {
+void pulsePin(uint8_t ubPin, uint16_t usPwmDelayUs) {
   uint8_t ubI = 0;
   ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
   for (; ubI < GAMMA_CONDENSED_MAX_VALUES; ubI++) {
     softwarePwmAnalogWrite(ubPin, gammaCorrectedCondensed(ubI));
-    delayInternalMicroseconds(usPwmdelayUs, NULL);
+    delayInternalMicroseconds(usPwmDelayUs, NULL);
   }
   for (ubI = GAMMA_CONDENSED_MAX_VALUES - 1; ubI > 0; ubI--) {
     softwarePwmAnalogWrite(ubPin, gammaCorrectedCondensed(ubI));
-    delayInternalMicroseconds(usPwmdelayUs, NULL);
+    delayInternalMicroseconds(usPwmDelayUs, NULL);
   }
 }
 /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
