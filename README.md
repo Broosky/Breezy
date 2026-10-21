@@ -41,6 +41,10 @@ Originally built for a family member, the project also serves as an introduction
 
 ![Rev 1](<Schematics/Rev 1.png>)
 
+## 🔹 V1.2.0 Firmware For Rev 1 Schematic
+
+- Limit mode cycling for unimplemented features.
+
 ## 🔹 V1.1.0 Firmware For Rev 1 Schematic
 
 - Additional modes of operation templates.
