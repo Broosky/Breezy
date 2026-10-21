@@ -26,7 +26,7 @@
 // Firmware version:
 /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 const uint8_t FW_VERSION_MAJOR = 1;
-const uint8_t FW_VERSION_MINOR = 1;
+const uint8_t FW_VERSION_MINOR = 2;
 const uint8_t FW_VERSION_PATCH = 0;
 /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 // EEPROM storage: Address (Width)
@@ -94,12 +94,14 @@ typedef struct QUIET_TIME {
 /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 // Program constants:
 /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-const uint8_t SERIAL_OUT = true;                    // Debug output.
-const uint16_t HANDLER_TOTAL_DURATION_MS = 5000;    // In each automatic mode, let the handler run for a specific duration.
-const uint8_t SYNC_MODE_CHECK_SECONDS = 10;         // Number of seconds the sync mode checks if the temperature has increased or decreased.
-const float SYNC_MODE_TEMP_DELTA = 1.0f;            // In sync mode, the temperature has to increase or decrease by this amount to consider cycling the output.
-const uint8_t INTERMITTENT_MODE_CYCLE_MINUTES = 5;  // Number of minutes the output is enabled/disabled when cycled in intermittent mode.
-const uint16_t PWM_DEFAULT_DELAY_US = 900;          // Microseconds.
+const uint8_t SERIAL_OUT = true;                                     // Debug output.
+const uint16_t HANDLER_TOTAL_DURATION_MS = 5000;                     // In each automatic mode, let the handler run for a specific duration.
+const uint8_t SYNC_MODE_CHECK_SECONDS = 15;                          // Number of seconds the sync mode checks if the temperature has increased or decreased.
+const float SYNC_MODE_TEMP_DELTA = 1.0f;                             // In sync mode, the temperature has to increase or decrease by this amount to consider cycling the output.
+const uint8_t INTERMITTENT_MODE_CYCLE_MINUTES = 5;                   // Number of minutes the output is enabled/disabled when cycled in intermittent mode.
+const uint16_t PWM_DEFAULT_DELAY_US = 900;                           // Microseconds.
+const GLOBAL_MODE_T LIMIT_GLOBAL_MODE = GLOBAL_MODE_COUNT;           // When advancing passed this global mode, wrap to the beginning (first global mode).
+const AUTOMATIC_MODE_T LIMIT_AUTOMATIC_MODE = AUTOMATIC_MODE_COUNT;  // When advancing passed this automatic mode, wrap to the beginning (first automatic mode).
 /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 // Inhibits the output from enabling in automatic mode when the output is commanded to activate.
 /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -199,9 +201,9 @@ void setup(void) {
   if (SERIAL_OUT) {
     Serial.begin(9600);
     delayInternalSeconds(1, interruptHandler);
-    Serial.println("=================");
-    Serial.println("== New Session ==");
-    Serial.println("=================");
+    serialWrite(__func__, "=================");
+    serialWrite(__func__, "== New Session ==");
+    serialWrite(__func__, "=================");
   }
 }
 /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -741,9 +743,20 @@ void advanceGlobalMode(void) {
 
   eCurrentGlobalMode = (GLOBAL_MODE_T)(eCurrentGlobalMode + 1);
 
-  // Wrap around.
-  if (eCurrentGlobalMode >= GLOBAL_MODE_COUNT) {
-    eCurrentGlobalMode = GLOBAL_MODE_MANUAL;
+  if (LIMIT_GLOBAL_MODE < GLOBAL_MODE_COUNT) {
+    if (eCurrentGlobalMode >= LIMIT_GLOBAL_MODE) {
+      Serial.print("Limiting global mode to (wrapping): ");
+      Serial.print(LIMIT_GLOBAL_MODE);
+      Serial.print(", ");
+      Serial.println(getGlobalModeName(LIMIT_GLOBAL_MODE));
+
+      eCurrentGlobalMode = GLOBAL_MODE_MANUAL;
+    }
+  } else {
+    // Wrap around.
+    if (eCurrentGlobalMode >= GLOBAL_MODE_COUNT) {
+      eCurrentGlobalMode = GLOBAL_MODE_MANUAL;
+    }
   }
 
   if (SERIAL_OUT) {
@@ -766,9 +779,20 @@ void advanceAutomaticMode(void) {
 
   eCurrentAutomaticMode = (AUTOMATIC_MODE_T)(eCurrentAutomaticMode + 1);
 
-  // Wrap around.
-  if (eCurrentAutomaticMode >= AUTOMATIC_MODE_COUNT) {
-    eCurrentAutomaticMode = AUTOMATIC_MODE_BASIC;
+  if (LIMIT_AUTOMATIC_MODE < AUTOMATIC_MODE_COUNT) {
+    if (eCurrentAutomaticMode >= LIMIT_AUTOMATIC_MODE) {
+      Serial.print("Limiting automatic mode to (wrapping): ");
+      Serial.print(LIMIT_AUTOMATIC_MODE);
+      Serial.print(", ");
+      Serial.println(getAutomaticModeName(LIMIT_AUTOMATIC_MODE));
+
+      eCurrentAutomaticMode = AUTOMATIC_MODE_BASIC;
+    }
+  } else {
+    // Wrap around.
+    if (eCurrentAutomaticMode >= AUTOMATIC_MODE_COUNT) {
+      eCurrentAutomaticMode = AUTOMATIC_MODE_BASIC;
+    }
   }
 
   if (SERIAL_OUT) {
@@ -913,3 +937,8 @@ void handleError(ERROR_CODE_T eErrorCode, const char* const szErrorDescription) 
   delayInternalMilliseconds(usRemainingDurationMs, interruptHandler);
 }
 /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+void serialWrite(const char* const szFunctionName, const char* const szMessage) {
+  Serial.print(szFunctionName);
+  Serial.print(": ");
+  Serial.println(szMessage);
+}

@@ -30,7 +30,6 @@ Originally built for a family member, the project also serves as an introduction
 - RTC support for scheduled behaviours and time-based logic.
 
 > If you found this project useful, interesting, or worth keeping an eye on, consider giving it a ⭐️.
-> It helps others discover the project and motivates me to keep building and sharing more.
 
 ## 🔹 Construction
 
